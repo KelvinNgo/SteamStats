@@ -2,19 +2,52 @@
 
 body{
     font-family: 'Roboto', sans-serif;
-}
-
-.form-container{
+    background: linear-gradient(#141e30, #243b55);
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+
+}
+
+.form-container{
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
     height: 300px;
+}
+
+label{
+    color: white;
+    font-size: 1.3rem;
+    margin-right: 30px;
+    text-shadow: 0 0 0 transparent, 0 0 13px #90b0e7,
+    0 0 5px #92b3ee, 0 0 5px #83a7e7, 0 0 10px #688ed2,
+    0 0 30px #27354e, 0 0 100px #455c85, 0 0 150px #7f96bf;
 }
 
 input{
     font-family: 'Roboto', sans-serif;
 }
 
-form{
+#steam_id{
+    width: 300px;
+    height: 20px;
+}
 
+#submit{
+    height: 27px;
+}
+
+form{
+    /*width: 200px;*/
+    /*display: flex;*/
+    /*justify-items: center;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+}
+
+#description{
+    color: white;
 }
