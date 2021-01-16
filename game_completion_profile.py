@@ -1,5 +1,4 @@
 from howlongtobeatpy import HowLongToBeat
-from getGameName import get_game_name
 from get_total_playtime import get_total_hours
 
 
@@ -9,7 +8,7 @@ from get_total_playtime import get_total_hours
 
 def game_completion_profile(games_owned: list) -> list:
     for game in games_owned:
-        result = HowLongToBeat(0.4).search(get_game_name(game["appid"]))
+        result = HowLongToBeat(0.4).search(game["name"])
         if result:
             print(result[0].game_name)
 
