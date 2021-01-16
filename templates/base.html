@@ -1,1 +1,13 @@
-<h1>Test {{ resp }} {{ id }}</h1>
+<div class="form-container">
+    <span class="description"></span>
+
+    <form action="{{ url_for('search') }}" method="POST">
+
+        {{ form.steam_id.label }} {{ form.steam_id }}
+        {{ form.csrf_token }}
+        {{ form.submit }}
+
+    </form>
+
+    <div> {{ data }} </div>
+</div>
