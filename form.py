@@ -5,6 +5,6 @@ from wtforms.validators import InputRequired
 
 class WordSearchForm(FlaskForm):
 
-    steam_id = StringField('Search', validators=[InputRequired()],
+    steam_id = StringField('SteamID', validators=[InputRequired()],
                 render_kw={"placeholder": "Input your steam ID:"})
     submit = SubmitField('Go')
