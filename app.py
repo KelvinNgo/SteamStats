@@ -1,13 +1,17 @@
 from flask import Flask, render_template, request
 from form import WordSearchForm
-import os
 from dotenv import load_dotenv
+import os
+from get_total_playtime import get_total_hours
 
-project_folder = os.path.expanduser('~/Hack-the-North-2021')  # adjust as appropriate
-load_dotenv(os.path.join(project_folder, '.env.key'))
+load_dotenv()
+
+
+SECRET_KEY = os.getenv("SECRET_KEY")
+
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaz'
+app.config['SECRET_KEY'] = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaz'  # this isn't that important
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 
@@ -16,9 +20,10 @@ def search():
     form = WordSearchForm()
     if form.validate_on_submit() and request.form['steam_id'].strip():
         query = request.form['steam_id']
-        return render_template("base.html", data=query.strip(), form=form)
+        return render_template("loading.html", data=query.strip(), form=form)
     return render_template("base.html", form=form)
 
 
 if __name__ == "__main__":
+    print(SECRET_KEY)
     app.run()
