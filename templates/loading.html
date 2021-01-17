@@ -7,14 +7,26 @@
 </head>
 
 <body>
+        <h1>IS THIS YOU?</h1>
 
+        <table id="profile-container" valign="top" cellpadding="5">
 
-<img class="load-spinner" src="../static/spinner.gif" alt="Loading"/>
- <span id="description"> <p>Please wait while we grab your data and analytics.</p></span>
+            <tr>
+                <td><img id="avatar" src="{{ profile['avatarfull'] }}" alt="Profile Picture"></td>
+                <td><span class="name">{{ profile['personaname'] }}</span><br />
+                    <a class="loading" href="{{ profile['profileurl'] }}">{{ profile['profileurl'] }}</a></td>
+            </tr>
 
+        </table>
 
-    <div> {{ lol }} </div>
-</div>
+        <br /><br />
+
+        <img class="load-spinner" src="../static/spinner.gif" alt="Loading"/>
+         <div id="description">Please wait while we grab your data and analytics.</div><br />
+
+        <a href="javascript:history.back()" class="button">< GO BACK ></a>
+
+        <div> {{ lol }} </div>
 
 
 </body>

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 body{
     font-family: 'Roboto', sans-serif;
@@ -8,7 +9,18 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
 
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
 }
 
 .form-container{
@@ -51,3 +63,56 @@ form{
 #description{
     color: white;
 }
+
+@keyframes ellipsis {
+  to {
+    width: 20px;
+  }
+}
+
+@-webkit-keyframes ellipsis {
+  to {
+    width: 20px;
+  }
+}
+
+.load-spinner{
+    width: 400px;
+}
+
+#profile-container{
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font: 1em 'Roboto', sans-serif;
+}
+
+.align-top{
+    vertical-align: top;
+}
+
+#avatar{
+    border-radius: 50%;
+    width: 100px;
+    float: left;
+}
+
+h1{
+    font: 4em 'Lato', sans-serif;
+    color: white;
+    text-shadow: 0 0 0 transparent, 0 0 13px #90b0e7,
+    0 0 5px #92b3ee, 0 0 5px #83a7e7, 0 0 10px #688ed2;
+}
+
+.name{
+    font: 2em 'Lato', sans-serif;
+    color: #003152;
+}
+
+a.button:link{ color: #FAEBEFFF; text-decoration: none; font-weight: bold; text-shadow: 0 0 0 transparent, 0 0 2px #90b0e7,
+    0 0 2px #92b3ee; }
+
+a.loading:link{ color: #0F52BA; text-decoration:none; }
+a.loading:visited{ color: #0F52BA; text-decoration:none; font-weight:normal; }
+a.loading:hover{ color: #6F3857; text-decoration:none; font-weight:normal; transition: 0.5s;}
+a.loading:active{ color: #7EF9FF; text-decoration:none; font-weight:normal; transition: 0.5s;}
