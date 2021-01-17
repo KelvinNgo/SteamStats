@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>SteamStats</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+
 </head>
 
 <body>
@@ -16,11 +17,13 @@
         {{ form.submit }}
 
     </form>
+
  <span id="description"> <p>Make sure your account is set to public. Most functionality will not work if set
-        to private.</p></span>
+        to private. </p></span>
+    <span id="description">This may take a minute to retrieve your data. . .</span>
 
     <div>{{ data }}</div>
-
-
+</div>
 
 </body>
+

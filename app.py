@@ -9,9 +9,17 @@ from game_completion_profile import game_completion_profile
 load_dotenv()
 
 test = [{'gamename': 'Counter-Strike: Condition Zero', 'gamepic':
-    'https://howlongtobeat.com/games/256px-CounterstrikeZerobox.jpg', 'percentcomplete': 50.0},
+    'https://howlongtobeat.com/games/256px-CounterstrikeZerobox.jpg', 'percentcomplete': 0.0},
         {'gamename': 'Counter-Strike: Condition Zero Deleted Scenes', 'gamepic':
-            'https://howlongtobeat.com/games/256px-ConditionZerobox.jpg', 'percentcomplete': 39.0}]
+            'https://howlongtobeat.com/games/256px-ConditionZerobox.jpg', 'percentcomplete': 0.0},
+        {'gamename': "Garry's Mod", 'gamepic': 'https://howlongtobeat.com/games/GarrysMod_292x136.jpg',
+         'percentcomplete': 6.31}, {'gamename': 'Killing Floor', 'gamepic':
+        'https://howlongtobeat.com/games/4983_Killing_Floor.jpg', 'percentcomplete': 14.59},
+        {'gamename': 'Fallout: New Vegas', 'gamepic': 'https://howlongtobeat.com/games/Fallout_New_Vegas.jpg',
+         'percentcomplete': 31.52}, {'gamename': 'Magicka', 'gamepic':
+        'https://howlongtobeat.com/games/Magicka_box.jpg', 'percentcomplete': 5.71},
+        {'gamename': 'Terraria', 'gamepic': 'https://howlongtobeat.com/games/Terraria_292x136.jpg',
+         'percentcomplete': 71.04}]
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 
@@ -26,10 +34,8 @@ def search():
     form = WordSearchForm()
     if form.validate_on_submit() and request.form['steam_id'].strip():
         query = request.form['steam_id']
-        #profile_data = get_profile_info(SECRET_KEY, query)[0]
-        #return render_template("loading.html", data=query.strip(), form=form, profile=profile_data)
-        #display_stats()
-        # return render_template("stats_display.html", stats=test)
+        # profile_data = get_profile_info(SECRET_KEY, query)[0]
+
         return render_template("stats_display.html", stats=test)
     return render_template("base.html", form=form)
 
@@ -37,6 +43,13 @@ def search():
 @app.route("/loading")
 def loading(data, form, profile):
     return render_template("loading.html", data=data, form=form, profile=profile)
+
+
+@app.route("/stats_display")
+def display_stats():
+    query = request.form['steam_id']
+    stats = game_completion_profile(get_total_hours(SECRET_KEY, query))
+    return render_template("stats_display.html", stats=test)
 
 
 if __name__ == "__main__":
