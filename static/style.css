@@ -53,8 +53,14 @@ input{
     height: 2.7vh;
     border-radius: 5px;
     border: transparent;
+    transition: box-shadow 0.2s ease-in-out;
 
+}
 
+#dropdown:focus{
+    box-shadow: 0 0 0 transparent, 0 0 13px #90b0e7,
+    0 0 5px #92b3ee, 0 0 5px #83a7e7, 0 0 50px #688ed2;
+    outline: transparent;
 }
 
 #steam_id{
@@ -68,7 +74,7 @@ input{
 
 #steam_id:focus{
     box-shadow: 0 0 0 transparent, 0 0 13px #90b0e7,
-    0 0 5px #92b3ee, 0 0 5px #83a7e7, 0 0 10px #688ed2;
+    0 0 5px #92b3ee, 0 0 5px #83a7e7, 0 0 50px #688ed2;
     outline: transparent;
 }
 
@@ -82,15 +88,7 @@ input{
 
 #submit:hover{
     box-shadow: 0 0 0 transparent, 0 0 13px #90b0e7,
-    0 0 5px #92b3ee, 0 0 5px #83a7e7, 0 0 10px #688ed2;
-}
-
-form{
-    /*width: 200px;*/
-    /*display: flex;*/
-    /*justify-items: center;*/
-    /*justify-content: center;*/
-    /*align-items: center;*/
+    0 0 5px #92b3ee, 0 0 5px #83a7e7, 0 0 50px #688ed2;
 }
 
 #description{
@@ -141,7 +139,17 @@ a.loading:active{ color: #7EF9FF; text-decoration:none; font-weight:normal; tran
 #charles-chad{
     height: 200px;
     width: 200px;
+    -webkit-filter: drop-shadow(10px 10px 10px #90b0e7);
+    filter: drop-shadow(0px 0px 30px #90b0e7);
+    animation: pulse 2s infinite linear reverse;
 }
+
+@keyframes pulse{
+    0% {filter:drop-shadow(0px 0px 15px #90b0e7) }
+    50% {filter:drop-shadow(0px 0px 30px #90b0e7)}
+    100% {filter:drop-shadow(0px 0px 15px #90b0e7)}
+}
+
 
 .logo-container{
     display: flex;
@@ -156,6 +164,6 @@ a.loading:active{ color: #7EF9FF; text-decoration:none; font-weight:normal; tran
     font: 4em 'Lato', sans-serif;
     color: white;
     text-shadow: 0 0 0 transparent, 0 0 13px #90b0e7,
-    0 0 5px #92b3ee, 0 0 5px #83a7e7, 0 0 10px #688ed2;
+    0 0 5px #92b3ee, 0 0 5px #83a7e7, 0 0 50px #688ed2;
 
 }
