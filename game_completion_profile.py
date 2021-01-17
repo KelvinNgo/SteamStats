@@ -18,7 +18,8 @@ def game_completion_profile(games_owned: list) -> list:
 
             if percentage_complete < 100:
                 list_of_game_info.append({"gamename": game["name"], "gamepic": result[0].game_image_url,
-                                          "percentcomplete": round(percentage_complete, 2)})
+                                          "percentcomplete": round(percentage_complete, 2),
+                                          "hourslogged": game_time_played})
 
     return list_of_game_info
 
