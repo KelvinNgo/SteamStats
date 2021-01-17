@@ -19,13 +19,13 @@ def game_completion_profile(games_owned: list) -> list:
             if percentage_complete < 100:
                 list_of_game_info.append({"gamename": game["name"], "gamepic": result[0].game_image_url,
                                           "percentcomplete": round(percentage_complete, 2),
-                                          "hourslogged": game_time_played})
+                                          "hourslogged": f"{game_time_played:.2f}"})
 
     return list_of_game_info
 
 
 def main():
-    print("sup")
+    print(game_completion_profile(get_total_hours("41B25A670436FE9A3CE2D0640FAB95F4", "76561198147800445")))
 
 
 if __name__ == '__main__':
