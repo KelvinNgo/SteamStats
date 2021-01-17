@@ -116,3 +116,20 @@ a.loading:link{ color: #0F52BA; text-decoration:none; }
 a.loading:visited{ color: #0F52BA; text-decoration:none; font-weight:normal; }
 a.loading:hover{ color: #6F3857; text-decoration:none; font-weight:normal; transition: 0.5s;}
 a.loading:active{ color: #7EF9FF; text-decoration:none; font-weight:normal; transition: 0.5s;}
+
+#stats-container{
+    min-width: 400px;
+    max-width: 600px;
+    text-align: center;
+}
+
+#games-table{
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.game-pic{
+    width: 140px;
+}
