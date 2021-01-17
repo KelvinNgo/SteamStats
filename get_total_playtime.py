@@ -9,7 +9,7 @@ def get_total_hours(secret, user_id) -> list:
 
 
 def main():
-    print(get_total_hours())
+    print(get_total_hours("41B25A670436FE9A3CE2D0640FAB95F4", "76561198147800445"))
 
 
 if __name__ == "__main__":
