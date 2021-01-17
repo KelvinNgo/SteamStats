@@ -3,7 +3,7 @@ from form import WordSearchForm
 from dotenv import load_dotenv
 import os
 from get_total_playtime import get_total_hours
-from get_profile import get_profile_info
+from sorting_algorithms import merge_sort_low_high, merge_sort_high_low
 from game_completion_profile import game_completion_profile
 
 load_dotenv()
@@ -32,11 +32,16 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 @app.route("/", methods=["GET", "POST"])
 def search():
     form = WordSearchForm()
-    if form.validate_on_submit() and request.form['steam_id'].strip():
+    if form.validate_on_submit() and request.form['dropdown'] == "Low to High":
         query = request.form['steam_id']
-        # stats = game_completion_profile(get_total_hours(SECRET_KEY, query))
-        profile = get_profile_info(SECRET_KEY, query)[0]
-        return render_template("stats_display.html", stats=test, profile=profile)
+        stats = merge_sort_low_high(game_completion_profile(get_total_hours(SECRET_KEY, query)))
+        return render_template("stats_display.html", stats=stats)
+
+    elif form.validate_on_submit() and request.form['dropdown'] == "High to Low":
+        query = request.form['steam_id']
+        stats = merge_sort_high_low(game_completion_profile(get_total_hours(SECRET_KEY, query)))
+        return render_template("stats_display.html", stats=stats)
+
     return render_template("base.html", form=form)
 
 

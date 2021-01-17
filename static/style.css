@@ -9,9 +9,9 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    animation: fadeInAnimation ease 3s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+    /*animation: fadeInAnimation ease 3s;*/
+    /*animation-iteration-count: 1;*/
+    /*animation-fill-mode: forwards;*/
 }
 
 @keyframes fadeInAnimation {
@@ -41,15 +41,48 @@ label{
 
 input{
     font-family: 'Roboto', sans-serif;
+    border-radius: 5px;
+    border: transparent;
+
+
+}
+
+#dropdown{
+    font-family: 'Roboto', sans-serif;
+    width: 10vw;
+    height: 2.7vh;
+    border-radius: 5px;
+    border: transparent;
+
+
 }
 
 #steam_id{
     width: 300px;
-    height: 20px;
+    border-radius: 5px;
+    border: transparent;
+    height: 1.4rem;
+    margin-right: 10px;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+#steam_id:focus{
+    box-shadow: 0 0 0 transparent, 0 0 13px #90b0e7,
+    0 0 5px #92b3ee, 0 0 5px #83a7e7, 0 0 10px #688ed2;
+    outline: transparent;
 }
 
 #submit{
     height: 27px;
+    border-radius: 5px;
+    border: transparent;
+    margin-right: 10px;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+#submit:hover{
+    box-shadow: 0 0 0 transparent, 0 0 13px #90b0e7,
+    0 0 5px #92b3ee, 0 0 5px #83a7e7, 0 0 10px #688ed2;
 }
 
 form{
@@ -62,18 +95,6 @@ form{
 
 #description{
     color: white;
-}
-
-@keyframes ellipsis {
-  to {
-    width: 20px;
-  }
-}
-
-@-webkit-keyframes ellipsis {
-  to {
-    width: 20px;
-  }
 }
 
 .load-spinner{
@@ -117,3 +138,24 @@ a.loading:visited{ color: #0F52BA; text-decoration:none; font-weight:normal; }
 a.loading:hover{ color: #6F3857; text-decoration:none; font-weight:normal; transition: 0.5s;}
 a.loading:active{ color: #7EF9FF; text-decoration:none; font-weight:normal; transition: 0.5s;}
 
+#charles-chad{
+    height: 200px;
+    width: 200px;
+}
+
+.logo-container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 5rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+#company-name{
+    font: 4em 'Lato', sans-serif;
+    color: white;
+    text-shadow: 0 0 0 transparent, 0 0 13px #90b0e7,
+    0 0 5px #92b3ee, 0 0 5px #83a7e7, 0 0 10px #688ed2;
+
+}
