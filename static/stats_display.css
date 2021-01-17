@@ -1,0 +1,37 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(#141e30, #243b55);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+#stats-container{
+    min-width: 400px;
+    max-width: 600px;
+    text-align: center;
+}
+
+#games-table{
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.game-pic{
+    width: 140px;
+    border-radius: 10px;
+}
+
+h1{
+    font: 4em 'Lato', sans-serif;
+    color: white;
+    text-shadow: 0 0 0 transparent, 0 0 13px #90b0e7,
+    0 0 5px #92b3ee, 0 0 5px #83a7e7, 0 0 10px #688ed2;
+}
