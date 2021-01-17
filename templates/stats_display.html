@@ -10,7 +10,7 @@
     <h1>GAMES</h1>
         <table id="games-table" cellpadding="10">
             <tr>
-                <td><img id="avatar" src="{{ profile['avatarfull'] }}" alt="Profile Picture"></td>
+                <td width="20%"><img id="avatar" src="{{ profile['avatarfull'] }}" alt="Profile Picture"></td>
                 <td><span class="name">{{ profile['personaname'] }}</span><br />
                     <a class="steam-link" href="{{ profile['profileurl'] }}">{{ profile['profileurl'] }}</a></td>
             </tr>
@@ -33,8 +33,10 @@
                                     <div class="game-name">{{ game[key] }}</div>
                                     {% endif %}
                                     {% if key == 'percentcomplete' %}
-
                                         <progress value="{{ game[key] }}" max="100">{{ game[key] }}</progress>
+                                    {% endif %}
+                                    {% if key == 'hourslogged' %}
+                                        <span class="hours-logged">{{ game[key] }} hours logged</span>
                                 </td>
                             {% endif %}
                         {% endfor %}

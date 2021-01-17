@@ -8,18 +8,7 @@ from game_completion_profile import game_completion_profile
 
 load_dotenv()
 
-test = [{'gamename': 'Counter-Strike: Condition Zero', 'gamepic':
-    'https://howlongtobeat.com/games/256px-CounterstrikeZerobox.jpg', 'percentcomplete': 0.0},
-        {'gamename': 'Counter-Strike: Condition Zero Deleted Scenes', 'gamepic':
-            'https://howlongtobeat.com/games/256px-ConditionZerobox.jpg', 'percentcomplete': 0.0},
-        {'gamename': "Garry's Mod", 'gamepic': 'https://howlongtobeat.com/games/GarrysMod_292x136.jpg',
-         'percentcomplete': 6.31}, {'gamename': 'Killing Floor', 'gamepic':
-        'https://howlongtobeat.com/games/4983_Killing_Floor.jpg', 'percentcomplete': 14.59},
-        {'gamename': 'Fallout: New Vegas', 'gamepic': 'https://howlongtobeat.com/games/Fallout_New_Vegas.jpg',
-         'percentcomplete': 31.52}, {'gamename': 'Magicka', 'gamepic':
-        'https://howlongtobeat.com/games/Magicka_box.jpg', 'percentcomplete': 5.71},
-        {'gamename': 'Terraria', 'gamepic': 'https://howlongtobeat.com/games/Terraria_292x136.jpg',
-         'percentcomplete': 71.04}]
+test = [{'gamename': 'Fallout: New Vegas', 'gamepic': 'https://howlongtobeat.com/games/Fallout_New_Vegas.jpg', 'percentcomplete': 31.52, 'hourslogged': '8.67'}, {'gamename': 'Magicka', 'gamepic': 'https://howlongtobeat.com/games/Magicka_box.jpg', 'percentcomplete': 5.71, 'hourslogged': '0.60'}, {'gamename': 'Terraria', 'gamepic': 'https://howlongtobeat.com/games/Terraria_292x136.jpg', 'percentcomplete': 71.04, 'hourslogged': '65.00'}]
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 
@@ -34,9 +23,9 @@ def search():
     form = WordSearchForm()
     if form.validate_on_submit() and request.form['steam_id'].strip():
         query = request.form['steam_id']
-        # stats = game_completion_profile(get_total_hours(SECRET_KEY, query))
+        stats = game_completion_profile(get_total_hours(SECRET_KEY, query))
         profile = get_profile_info(SECRET_KEY, query)[0]
-        return render_template("stats_display.html", stats=test, profile=profile)
+        return render_template("stats_display.html", stats=stats, profile=profile)
     return render_template("base.html", form=form)
 
 
@@ -49,7 +38,7 @@ def loading(data, form, profile):
 def display_stats():
     query = request.form['steam_id']
     stats = game_completion_profile(get_total_hours(SECRET_KEY, query))
-    return render_template("stats_display.html", stats=test)
+    return render_template("stats_display.html", stats=stats)
 
 
 if __name__ == "__main__":

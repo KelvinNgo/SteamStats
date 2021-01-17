@@ -59,3 +59,7 @@ a.steam-link:link{ color: #0F52BA; text-decoration:none; }
 a.steam-link:visited{ color: #0F52BA; text-decoration:none; font-weight:normal; }
 a.steam-link:hover{ color: #6F3857; text-decoration:none; font-weight:normal; transition: 0.5s;}
 a.steam-link:active{ color: #7EF9FF; text-decoration:none; font-weight:normal; transition: 0.5s;}
+
+.hours-logged{
+    font: 0.8em 'Roboto', sans-serif;
+}
