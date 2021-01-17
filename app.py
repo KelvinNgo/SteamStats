@@ -5,6 +5,7 @@ import os
 from get_total_playtime import get_total_hours
 from sorting_algorithms import merge_sort_low_high, merge_sort_high_low
 from game_completion_profile import game_completion_profile
+from get_profile import get_profile_info
 
 load_dotenv()
 
@@ -35,12 +36,14 @@ def search():
     if form.validate_on_submit() and request.form['dropdown'] == "Low to High":
         query = request.form['steam_id']
         stats = merge_sort_low_high(game_completion_profile(get_total_hours(SECRET_KEY, query)))
-        return render_template("stats_display.html", stats=stats)
+        profile = get_profile_info(SECRET_KEY, query)[0]
+        return render_template("stats_display.html", stats=stats, profile=profile)
 
     elif form.validate_on_submit() and request.form['dropdown'] == "High to Low":
         query = request.form['steam_id']
         stats = merge_sort_high_low(game_completion_profile(get_total_hours(SECRET_KEY, query)))
-        return render_template("stats_display.html", stats=stats)
+        profile = get_profile_info(SECRET_KEY, query)[0]
+        return render_template("stats_display.html", stats=stats, profile=profile)
 
     return render_template("base.html", form=form)
 
@@ -48,13 +51,6 @@ def search():
 @app.route("/loading")
 def loading(data, form, profile):
     return render_template("loading.html", data=data, form=form, profile=profile)
-
-
-@app.route("/stats_display")
-def display_stats():
-    query = request.form['steam_id']
-    stats = game_completion_profile(get_total_hours(SECRET_KEY, query))
-    return render_template("stats_display.html", stats=test)
 
 
 if __name__ == "__main__":
