@@ -9,23 +9,37 @@
     <div id="stats-container">
     <h1>GAMES</h1>
         <table id="games-table" cellpadding="10">
-        {% for game in stats%}
-                <tr>
-                {% for key in game%}
-                    {% if key == 'gamepic' %}
-                        <td><img class="game-pic" src="{{ game[key] }}"></td>
-                    {% endif %}
-                {% endfor %}
-                {% for key in game%}
-                    {% if key == 'gamename' %}
-                        <td valign="top">{{ game[key] }}<br />
-                    {% endif %}
-                    {% if key == 'percentcomplete' %}
-                        {{ game[key] }}</td>
-                    {% endif %}
-                {% endfor %}
-                </tr>
-        {% endfor %}
+            <tr>
+                <td><img id="avatar" src="{{ profile['avatarfull'] }}" alt="Profile Picture"></td>
+                <td><span class="name">{{ profile['personaname'] }}</span><br />
+                    <a class="steam-link" href="{{ profile['profileurl'] }}">{{ profile['profileurl'] }}</a></td>
+            </tr>
+            <tr>
+                <td colspan="2"><hr></td>
+            </tr>
+            <tr>
+                <td colspan="2">* bars indicate how much time you've spent on a game relative to the average time it takes to complete<br /><br /></td>
+            </tr>
+            {% for game in stats%}
+                    <tr>
+                        {% for key in game%}
+                            {% if key == 'gamepic' %}
+                                <td><img class="game-pic" src="{{ game[key] }}"></td>
+                            {% endif %}
+                        {% endfor %}
+                        {% for key in game%}
+                            {% if key == 'gamename' %}
+                                <td valign="top">
+                                    <div class="game-name">{{ game[key] }}</div>
+                                    {% endif %}
+                                    {% if key == 'percentcomplete' %}
+
+                                        <progress value="{{ game[key] }}" max="100">{{ game[key] }}</progress>
+                                </td>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+            {% endfor %}
         </table>
     </div>
 </body>

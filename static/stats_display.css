@@ -12,8 +12,7 @@ body{
 }
 
 #stats-container{
-    min-width: 400px;
-    max-width: 600px;
+    min-width: 600px;
     text-align: center;
 }
 
@@ -29,9 +28,33 @@ body{
     border-radius: 10px;
 }
 
+.game-name{
+    font: 1.4em 'Lato', sans-serif;
+}
+
 h1{
     font: 4em 'Lato', sans-serif;
     color: white;
     text-shadow: 0 0 0 transparent, 0 0 13px #90b0e7,
     0 0 5px #92b3ee, 0 0 5px #83a7e7, 0 0 10px #688ed2;
 }
+
+.align-top{
+    vertical-align: top;
+}
+
+#avatar{
+    border-radius: 50%;
+    width: 100px;
+    float: left;
+}
+
+.name{
+    font: 2em 'Lato', sans-serif;
+    color: #003152;
+}
+
+a.steam-link:link{ color: #0F52BA; text-decoration:none; }
+a.steam-link:visited{ color: #0F52BA; text-decoration:none; font-weight:normal; }
+a.steam-link:hover{ color: #6F3857; text-decoration:none; font-weight:normal; transition: 0.5s;}
+a.steam-link:active{ color: #7EF9FF; text-decoration:none; font-weight:normal; transition: 0.5s;}

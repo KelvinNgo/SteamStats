@@ -35,7 +35,8 @@ def search():
     if form.validate_on_submit() and request.form['steam_id'].strip():
         query = request.form['steam_id']
         # stats = game_completion_profile(get_total_hours(SECRET_KEY, query))
-        return render_template("stats_display.html", stats=test)
+        profile = get_profile_info(SECRET_KEY, query)[0]
+        return render_template("stats_display.html", stats=test, profile=profile)
     return render_template("base.html", form=form)
 
 
