@@ -5,6 +5,7 @@ import sorting_algorithms
 
 
 def game_completion_profile(games_owned: list) -> list:
+    """Take list of games in steam library and convert to dictionaries containing information to build results page."""
     list_of_game_info = []
 
     for game in games_owned:

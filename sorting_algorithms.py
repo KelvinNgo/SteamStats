@@ -1,6 +1,7 @@
 
 
 def low_high_merge(left, right):
+    """Merge two lists into a single list ordered lowest to highest."""
     if len(left) == 0:
         return right
 
@@ -30,6 +31,7 @@ def low_high_merge(left, right):
 
 
 def high_low_merge(left, right):
+    """Merge two lists into a single list ordered highest to lowest."""
     if len(left) == 0:
         return right
 
@@ -60,6 +62,7 @@ def high_low_merge(left, right):
 
 
 def merge_sort_low_high(array):
+    """Split given list in half and sort recursively lowest to highest."""
     if len(array) < 2:
         return array
 
@@ -69,6 +72,7 @@ def merge_sort_low_high(array):
 
 
 def merge_sort_high_low(array):
+    """Split given list in half and sort recursively lowest to highest."""
     if len(array) < 2:
         return array
 
