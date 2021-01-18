@@ -10,6 +10,12 @@ We like games! We wanted to find a way to make something simple but useful out o
 Find your steam id and make sure your account is set to public. Put it in. Wait for a bit, because we made it kind of slow, and then voila. You can see your game hours compared to the [average completion time](https://howlongtobeat.com/). 
 ## How we built it
 We pulled some information from the Steam API and howlongtobeat API. We used Flask for some basic routing and templating. CSS and HTML for the front end.
+## What you need to use it
+- Set your Steam profile to public. Some Steam stats won't be visible if private. 
+- Find your [SteamID](https://help.daybreakgames.com/hc/en-us/articles/230631407-How-do-I-locate-my-Steam-ID-)
+- Get a [Steam Web API Key](https://steamcommunity.com/dev)
+- Make a .env and make a variable SECRET_KEY with the Steam Web API key
+- Flask
 ## Challenges we ran into
 A lot. We struggled with implementing our original idea using another API that required OpenID and OAuth. The documentation was very confusing for newcomers. We spent a bulk of our time trying to figure out how to access these web APIs and ultimately decided to move on and use something easier to implement. We also stripped down a lot of our planned functionality in the interest of time. We also ran into issues dealing with asynchronous functions and rendering in Flask so we had to scrap an idea.
 ## Accomplishments that we're proud of
