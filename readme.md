@@ -1,8 +1,8 @@
 # Hack-the-North-2021
 Group Submission for Hack the North 2021 - Nick, Kelvin, Christine, Charles
 
-![demo](./static/demo/front_page.jpg =250x250)
-![demo2](./static/demo/stats.jpg =250x250)
+![demo](./static/demo/front_page.jpgs=200)
+![demo2](./static/demo/stats.jpgs=200)
  
 ## Inspiration
 We like games. 
